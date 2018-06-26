@@ -1,14 +1,12 @@
 # TODO List
-- [x] Preview Producrt
-- [x] Add Product
-- [ ] Product Detail
-- [x] Update Producrt
-- [x] Delete Product
+- [x] Preview Product
+- [x] Add Product (Modal)
+- [x] Product Detail (Modal)
+- [x] Update Product (Modal)
+- [x] Delete Product (Modal)
 - [ ] Delete Multiple Product
-- [x] Search Producrt
+- [x] Search Product
 - [x] Pagination
-- [ ] Design
-
 
 # Shoppingsample
 
@@ -21,4 +19,4 @@ npm install
 ## Tech & Tool
 - Angular 6
 - Firebase (Hosting, Cloud Firestore)
-- PWA
+

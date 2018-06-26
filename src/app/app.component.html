@@ -1,19 +1,2 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
-<input type="text" [(ngModel)]="prodname">
-<input type="text" [(ngModel)]="proddesc">
-<button (click)="add()">Add</button>
-<br>
-<br>
-
-<input type="text" [(ngModel)]="searchterm" (keydown.enter)="search($event)" placeholder="search">
-<h1>List of data</h1>
-<div *ngFor="let product of items | async | paginate: { itemsPerPage: 2, currentPage: p, totalItems: total }">
-  <p>Product name - {{product.name}}</p>
-  <p>Product description - {{product.desc}}</p>
-  <img [src]="product.imgUrl">
-  <br>
-  <button (click)="update(product.id)">Update</button>
-  <button (click)="delete(product.id)">Delete</button>
-</div>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<router-outlet></router-outlet>
