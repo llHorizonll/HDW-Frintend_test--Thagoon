@@ -7,7 +7,7 @@
 - [ ] Delete Multiple Product
 - [x] Search Producrt
 - [x] Pagination
-- [] Design
+- [ ] Design
 
 
 # Shoppingsample
