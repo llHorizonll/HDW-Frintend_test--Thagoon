@@ -1,3 +1,6 @@
+# Demo
+https://shoppingsample-7e903.firebaseapp.com/
+
 # TODO List
 - [x] Preview Product
 - [x] Add Product
