@@ -44,7 +44,9 @@ export class ProductListComponent implements OnInit {
     if (q !== '') {
       this.items = this.afs.collection<any>('products', ref => {
         let query: firebase.firestore.Query = ref;
-        if (q) { query = query.where('name', '==', q); }
+        if (q) {
+          query = query.where('name', '==', q);
+        }
         return query;
       }).valueChanges();
     } else {
@@ -71,12 +73,14 @@ export class ProductListComponent implements OnInit {
       }).then((docRef) => {
         this.prodcollection.doc(docRef.id).update({
           date: new Date(),
-          imgUrl: `https://fakeimg.pl/350x200/?text=${this.prodname}`
+          imgUrl: `https://fakeimg.pl/400x200/?text=${docRef.id}`
         });
       }).then(() => {
         this.p = 1;
         this.isNewModal = false;
         this.isOkLoading = false;
+        this.prodname = '';
+        this.proddesc = '';
       });
     }
   }
@@ -90,6 +94,8 @@ export class ProductListComponent implements OnInit {
     }).then(() => {
       this.isDetailModal = false;
       this.isOkLoading = false;
+      this.prodname = '';
+      this.proddesc = '';
     }).catch((error) => {
       console.log(error);
     });
@@ -98,13 +104,15 @@ export class ProductListComponent implements OnInit {
   handleDelete() {
     this.isOkLoading = true;
     this.prodcollection.doc(this.prodid).delete()
-    .then(() => {
-      this.isDetailModal = false;
-      this.isOkLoading = false;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .then(() => {
+        this.isDetailModal = false;
+        this.isOkLoading = false;
+        this.prodname = '';
+        this.proddesc = '';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
 

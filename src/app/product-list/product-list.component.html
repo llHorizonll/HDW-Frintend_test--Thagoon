@@ -22,8 +22,8 @@
       </div>
       <div nz-row align="center">
         <div nz-col nzXs="24" nzSm="16" nzMd="12" nzLg="8" nzXl="6" style="margin-bottom: 20px;" *ngFor="let product of items | async | paginate: { itemsPerPage: 4, currentPage: p, totalItems: total };let i = index"
-        (click)="showDetailModal(product)">
-          <nz-card nzHoverable style="width:240px" [nzCover]="i">
+          (click)="showDetailModal(product)">
+          <nz-card nzHoverable style="width:260px" [nzCover]="i">
             <nz-card-meta style="text-align: left;" [nzTitle]="product.name" [nzDescription]="product.desc"></nz-card-meta>
           </nz-card>
           <ng-template #i>
@@ -64,28 +64,29 @@
 </nz-modal>
 
 <!-- Detail Modal -->
-<nz-modal [(nzVisible)]="isDetailModal" [nzTitle]="modalTitleDetail" [nzContent]="modalContentDetail" [nzFooter]="modalFooterDetail" (nzOnCancel)="handleCancel()">
-    <ng-template #modalTitleDetail>
-      Product Detail
-    </ng-template>
-    <ng-template #modalContentDetail>
-      <div nz-row align="center">
-        <div nz-col nzMd="24">
-          <nz-form-label nzMd="10" nzFor="name" style="text-align: left">Product Name</nz-form-label>
-          <div nz-col nzMd="12">
-            <input nz-input [(ngModel)]="prodname">
-          </div>
-        </div>
-        <div nz-col nzMd="24">
-          <nz-form-label nzMd="10" nzFor="name" style="text-align: left">Product Description</nz-form-label>
-          <div nz-col nzMd="12">
-            <textarea nz-input [(ngModel)]="proddesc" row="5"></textarea>
-          </div>
+<nz-modal [(nzVisible)]="isDetailModal" [nzTitle]="modalTitleDetail" [nzContent]="modalContentDetail" [nzFooter]="modalFooterDetail"
+  (nzOnCancel)="handleCancel()">
+  <ng-template #modalTitleDetail>
+    Product Detail
+  </ng-template>
+  <ng-template #modalContentDetail>
+    <div nz-row align="center">
+      <div nz-col nzMd="24">
+        <nz-form-label nzMd="10" nzFor="name" style="text-align: left">Product Name</nz-form-label>
+        <div nz-col nzMd="12">
+          <input nz-input [(ngModel)]="prodname">
         </div>
       </div>
-    </ng-template>
-    <ng-template #modalFooterDetail>
-      <button nz-button nzType="danger" (click)="handleDelete()"  [nzLoading]="isOkLoading">Delete</button>
-      <button nz-button nzType="primary" (click)="handleUpdate()" [nzLoading]="isOkLoading">Update</button>
-    </ng-template>
-  </nz-modal>
+      <div nz-col nzMd="24">
+        <nz-form-label nzMd="10" nzFor="name" style="text-align: left">Product Description</nz-form-label>
+        <div nz-col nzMd="12">
+          <textarea nz-input [(ngModel)]="proddesc" row="5"></textarea>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #modalFooterDetail>
+    <button nz-button nzType="danger" (click)="handleDelete()" [nzLoading]="isOkLoading">Delete</button>
+    <button nz-button nzType="primary" (click)="handleUpdate()" [nzLoading]="isOkLoading">Update</button>
+  </ng-template>
+</nz-modal>
