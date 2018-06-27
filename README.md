@@ -18,6 +18,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Install
 
 npm install
+
 npm start
 
 ## Tech & Tool
